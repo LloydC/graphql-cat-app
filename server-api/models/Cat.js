@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
+const catSchema = new Schema({
+    name: {
+        type: String
+    },
+},
+{timestamps: true}
+)
 
-const Cat = mongoose.model('Cat', { name: String });
+const Cat = mongoose.model('Cat', catSchema);
 
-module.exports = {Cat};
-// const kitty = new Cat({ name: 'Zildjian' });
-// kitty.save().then(() => console.log('meow'));
+module.exports = Cat;
